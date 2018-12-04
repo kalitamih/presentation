@@ -37,24 +37,43 @@
 						<li class="fragment">Data is stored in database tables by following a strict data schema (= structure)</li>
 						<li class="fragment">Data is distributed across multiple tables which are connected via relations</li>
 			    	</ul>
+					<aside class="notes">
+	                	SQL stands for Structured Query Language and it therefore is not a database itself but only a query language you can use to interact with a specific type of database.
+                        SQL allows you to store, update, delete and of course retrieve data from relational database management systems (RDBMS).
+						You can't add records which don't adhere to this schema. Got more fields? Sorry, you have to pick another table. Missing some field data? Not your table then!
+	                </aside>
 				</section>
 				<section>
 					<p data-fragment-index="1" style="font-size: 70px;">Strict Schema</p>
 					<ul>
 						<img src="./img/sql-relations.JPG" alt="sql-schema">
 					</ul>
+					<aside class="notes">
+	                	Data is stored as records in tables and each table has a clearly defined structure - a set of fields which defines which data may go into the table and which data may not.
+                        The structure is defined regarding the names of the fields as well as the datatypes.
+	                </aside>
 				</section>
 				<section>
 					<p data-fragment-index="1" style="font-size: 70px;">Relations</p>
 					<ul>
 						<img src="./img/sql-schema.JPG" alt="sql-relations">
 					</ul>
+					<aside class="notes">
+	                	The other important part of SQL-based databases are relations.
+                        You split data into multiple tables so that you avoid data duplication. Therefore, you'll have a Users, Products and Orders table but each table will only hold data that is not stored in one of the other tables.
+						This clear structure can have advantages - you won't end up with incorrect data in one of your tables whilst having correct one in all others. That's a case you won't run into because data is always only managed in one table, it is not duplicated across tables.
+	                </aside>
 				</section>
 				<section>
 					<p data-fragment-index="1" style="font-size: 70px;">The Problem with Structured Data</p>
 					<ul>
 						<img src="./img/the-problem-with-structured-data.jpeg" alt="the problem with structured data">
 					</ul>
+					<aside class="notes">
+	                	The problem with a structured database is that it can become too structured and require a lot of resources to create and design a good database. 
+						Just to show one example of this, what if we have a table that defines some structure and for a specific row we want to have some extra data?
+						This is not easily done with a relational database.
+	                </aside>
 				</section>
 				<section>
 					<h2 style="font-size: 70px;">NoSQL Databases</h2>
