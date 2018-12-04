@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<style>
+			.box{
+				height: max-content;
+			}
+			.flex{
+				display: flex;
+			}
+			.box>*{
+				background-color: blue;
+				border-radius: 10%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>NoSQL. MongoDB.</h1>
+				</section>
+				<!--slide with the synonyms-->
+				<section>
+					<h2 style="font-size: 70px;">SQL Databases</h2>
+					<ul>
+						<li class="fragment">Data is stored in database tables by following a strict data schema (= structure)</li>
+						<li class="fragment">Data is distributed across multiple tables which are connected via relations</li>
+			    	</ul>
+				</section>
+				<section>
+					<p data-fragment-index="1" style="font-size: 70px;">Strict Schema</p>
+					<ul>
+						<img src="./img/sql-relations.JPG" alt="sql-schema">
+					</ul>
+				</section>
+				<section>
+					<p data-fragment-index="1" style="font-size: 70px;">Relations</p>
+					<ul>
+						<img src="./img/sql-schema.JPG" alt="sql-relations">
+					</ul>
+				</section>
+				<section>
+					<p data-fragment-index="1" style="font-size: 70px;">The Problem with Structured Data</p>
+					<ul>
+						<img src="./img/the-problem-with-structured-data.jpeg" alt="the problem with structured data">
+					</ul>
+				</section>
+				<section>
+					<h2 style="font-size: 70px;">NoSQL Databases</h2>
+					<ul>
+						<li class="fragment">No schemas</li>
+						<li class="fragment">No relations</li>
+			    	</ul>
+				</section>
+				<section>
+					<p data-fragment-index="1" style="font-size: 70px;">Types of noSQL databases</p>
+					<ul>
+						<img src="./img/typesnoSQL.png" alt="sql-schema">
+					</ul>
+				</section>
+				<section>
+					<p data-fragment-index="1" style="font-size: 70px;">Document in MongoDB</p>
+					<ul>
+						<img src="./img/document in MongoDB.png" alt="sql-schema">
+					</ul>
+				</section>
+				<section>
+					<h2 style="font-size: 70px;">Common Terms in MongoDB</h2>
+					<ul>
+						<li class="fragment">_id</li>
+						<li class="fragment">Collection</li>
+						<li class="fragment">Cursor</li>
+						<li class="fragment">Database</li>
+						<li class="fragment">Document</li>
+						<li class="fragment">Field</li>
+						<li class="fragment">JSON</li>
+					</ul>
+				</section>
+				<section>
+					<p data-fragment-index="1" style="font-size: 70px;">Difference between MongoDB & RDBMS</p>
+					<ul>
+						<img src="./img/RDBMSvsMongoDB.PNG" alt="sql-schema">
+					</ul>
+				</section>
+				<section>
+					<h2>Download MongoDB</h2>
+					<ul>
+						<img src="./img/download.PNG" alt="sql-schema">
+					</ul>
+				</section>
+				<section>
+					<h2>Creating a Database</h2>
+					<ul>
+						<li class="fragment">To view available databases, run this command:  show dbs</li>
+						<li class="fragment">Run this command to create a database and set it to be the active database:<br> use databasename</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Query Language</h2>
+					<ul>
+						<img src="./img/MySQLvsMongoDB.PNG" alt="sql-schema">
+					</ul>
+				</section>
+				<section>
+					<h2 style="font-size: 70px;">Disadvantages</h2>
+					<ul>
+						<li class="fragment">Increased flexibility might lead you to work sloppy and postpone data structure decisions</li>
+						<li class="fragment">Duplicate data means that you have to update multiple collections and documents if that data changes - not just one record in one table as you would do it in the SQL world</li>
+					</ul>
+				</section>
+				<section>
+					<h2 style="font-size: 70px;">Advantages</h2>
+					<ul>
+						<li class="fragment">Absence of a schema gives you more flexibility - you can adjust your stored data at any point and introduce new "fields"</li>
+						<li class="fragment">Data is stored in the format your app needs it - this speeds up fetching the data</li>
+					</ul>
+				</section>
+				<section>
+					<h5>Sources:</h5>
+					<ul>
+						<li class="fragment"><a href="https://www.mongodb.com/">www.mongodb.com</a></li>
+						<li class="fragment"><a href="https://www.calebcurry.com/intro-to-mongodb/">www.calebcurry.com/intro-to-mongodb/</a></li>
+						<li class="fragment"><a href="https://academind.com/learn/web-dev/sql-vs-nosql/">SQL vs NoSQL</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+			});
+		</script>
+	</body>
+</html>
