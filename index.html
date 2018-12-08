@@ -60,42 +60,57 @@
 						<li class="fragment">No schemas</li>
 						<li class="fragment">No relations</li>
 			    	</ul>
+					<aside class="notes">
+	                	 There is a core difference: You can put data of different structure into the same collection. You couldn't do that in the SQL world - each table had a clear schema there.
+	                </aside>
 				</section>
 				<section>
 					<p data-fragment-index="1" style="font-size: 70px;">Types of noSQL databases</p>
 					<ul>
 						<img src="./img/typesnoSQL.png" alt="sql-schema">
 					</ul>
+					<aside class="notes">
+	                	 There are 4 basic types of NoSQL databases:<br>
+                         1. Key-Value Store – It has a Big Hash Table of keys & values.<br>
+                         2. Document-based Store- It stores documents made up of tagged elements.<br>
+                         3. Column-based Store- Each storage block contains data from only one column.<br>
+                         4. Graph-based-A network database that uses edges and nodes to represent and store data.
+	                </aside>
 				</section>
 				<section>
 					<p data-fragment-index="1" style="font-size: 70px;">Document in MongoDB</p>
 					<ul>
-						<img src="./img/document in MongoDB.png" alt="sql-schema">
+						<img src="./img/document in MongoDB.png" alt="document in Mongo DB">
 					</ul>
+					<aside class="notes">
+	                	 MongoDB stores data records as BSON documents. BSON is a binary representation of JSON documents, though it contains more data types than JSON.
+						 MongoDB documents are composed of field-and-value pairs and have the following structure:
+                         The value of a field can be any of the BSON data types, including other documents, arrays, and arrays of documents. 
+	                </aside>
 				</section>
 				<section>
-					<h2 style="font-size: 70px;">Common Terms in MongoDB</h2>
+					<p data-fragment-index="1" style="font-size: 70px;">Relationship of MySQL terminology with MongoDB</p>
 					<ul>
-						<li class="fragment">_id</li>
-						<li class="fragment">Collection</li>
-						<li class="fragment">Cursor</li>
-						<li class="fragment">Database</li>
-						<li class="fragment">Document</li>
-						<li class="fragment">Field</li>
-						<li class="fragment">JSON</li>
+						<img src="./img/MySQL vs MongoDB.png" alt="terminology difference">
 					</ul>
-				</section>
-				<section>
-					<p data-fragment-index="1" style="font-size: 70px;">Difference between MongoDB & RDBMS</p>
-					<ul>
-						<img src="./img/RDBMSvsMongoDB.PNG" alt="sql-schema">
-					</ul>
+					<aside class="notes">
+	                	 The _id field represents a unique value in the MongoDB document. <br>
+						 Collection – This is a grouping of MongoDB documents.<br>
+                         Database – This is a container for collections like in RDMS wherein it is a container for tables.<br>
+						 Document - A record in a MongoDB collection is basically called a document. <br>
+						 Field - A name-value pair in a document. 
+	                </aside>
 				</section>
 				<section>
 					<h2>Download MongoDB</h2>
 					<ul>
 						<img src="./img/download.PNG" alt="sql-schema">
 					</ul>
+					<aside class="notes">
+	                	 1.  Download MongoDB. <br>
+						 2.  Click recommended installation.<br>
+                         3.  When you extract the download, there is going to be a bin folder.  Inside of this bin folder there are two important files: mongo, and mongod. Mongod is the server, mongo is how we communicate to this server.<br>
+				    </aside>
 				</section>
 				<section>
 					<h2>Creating a Database</h2>
@@ -103,26 +118,63 @@
 						<li class="fragment">To view available databases, run this command:  show dbs</li>
 						<li class="fragment">Run this command to create a database and set it to be the active database:<br> use databasename</li>
 					</ul>
+					<aside class="notes">
+	                	 To view available databases, run this command: show dbs. <br>
+						 Run this command to create a database: use databasename. <br>
+                         This will create the database and set it to be the active database.
+                    </aside>
 				</section>
 				<section>
 					<h2>Query Language</h2>
 					<ul>
-						<img src="./img/MySQLvsMongoDB.PNG" alt="sql-schema">
+						<img src="./img/query-language.png" alt="query-language">
 					</ul>
+					<aside class="notes">
+	                	  You can use the following commands to query the data in MySQL database- ‘SELECT’, ‘UPDATE’, ‘INSERT’ and ‘DELETE’.
+                          Let’s have a quick comparison.
+                    </aside>
 				</section>
 				<section>
-					<h2 style="font-size: 70px;">Disadvantages</h2>
+					<h2>The speed of MySQL and MongoDB for 1000000 records</h2>
 					<ul>
-						<li class="fragment">Increased flexibility might lead you to work sloppy and postpone data structure decisions</li>
-						<li class="fragment">Duplicate data means that you have to update multiple collections and documents if that data changes - not just one record in one table as you would do it in the SQL world</li>
+						<img src="./img/speed.png" alt="speed">
 					</ul>
+					<aside class="notes">
+	                	  Let’s take a general example to understand the speed of MySQL and MongoDB in accordance with various functions.
+                          Measurements have been performed in the following cases: MySQL 5.7.9 and MongoDB 3.2.0. 
+						  Each of these has been tested on a separate m4.xlarge Amazon instance with the ubuntu 14.4 x64 and default configurations, all tests were performed for 1000000 records.
+						  It is evident from the above graph that MongoDB takes way more lesser time than MySQL for same commands. And this must have answered your question: how fast is MongoDB compared to MySQL!
+                    </aside>
 				</section>
 				<section>
-					<h2 style="font-size: 70px;">Advantages</h2>
+					<h2 style="font-size: 70px;">When to use MongoDB?</h2>
 					<ul>
-						<li class="fragment">Absence of a schema gives you more flexibility - you can adjust your stored data at any point and introduce new "fields"</li>
+						<li class="fragment">When you need high availability of data with automatic, fast and instant data recovery.</li>
+						<li class="fragment">If you have an unstable schema and you want to reduce your schema migration cost.</li>
+						<li class="fragment">If you don’t have a Database Administrator.</li>
+						<li class="fragment">If most of your services are cloud-based, MongoDB is best suitable for you, as its native scale-out architecture enabled by ‘sharding’ aligns well with horizontal scaling and agility offered by cloud computing.</li>
+					</ul>
+					<aside class="notes">
+	                	  When you need high availability of data with automatic, fast and instant data recovery. <br>
+                          If you have an unstable schema and you want to reduce your schema migration cost. <br>
+						  If you don’t have a Database Administrator. <br>
+						  If most of your services are cloud-based, MongoDB is best suitable for you, as its native scale-out architecture enabled by ‘sharding’ aligns well with horizontal scaling and agility offered by cloud computing.
+                    </aside>
+				</section>
+	     		<section>
+					<h2 style="font-size: 70px;">MongoDB: Pros & Cons</h2>
+					<ul>
+					   	<li class="fragment">Absence of a schema gives you more flexibility - you can adjust your stored data at any point and introduce new "fields"</li>
 						<li class="fragment">Data is stored in the format your app needs it - this speeds up fetching the data</li>
+						<li class="fragment">Expansion plans are flexible and can be easily achieved by adding more machines and RAM to the system.</li>
+						<li class="fragment">The cons of MongoDB include higher data size over the period of time. </li>
 					</ul>
+					 <aside class="notes">
+	                	  Absence of a schema gives you more flexibility - you can adjust your stored data at any point and introduce new "fields" <br>
+                          Data is stored in the format your app needs it - this speeds up fetching the data <br>
+						  Expansion plans are flexible and can be easily achieved by adding more machines and RAM to the system. <br>
+						  The cons of MongoDB include higher data size over the period of time.
+                    </aside>
 				</section>
 				<section>
 					<h5>Sources:</h5>
@@ -131,6 +183,9 @@
 						<li class="fragment"><a href="https://www.calebcurry.com/intro-to-mongodb/">www.calebcurry.com/intro-to-mongodb/</a></li>
 						<li class="fragment"><a href="https://academind.com/learn/web-dev/sql-vs-nosql/">SQL vs NoSQL</a></li>
 					</ul>
+					<aside class="notes">
+	                	Now you can some links, which provide you more information about MongoDB and other unstructed databases.
+                    </aside>
 				</section>
 			</div>
 		</div>
